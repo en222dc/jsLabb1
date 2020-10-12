@@ -1,7 +1,7 @@
 
 // modifiera sum() tills testet blir godkänt!
 function sum() {
-
+hej svejs kalle svejs
 }
 
 function myOwnMultiplyFunction() {
