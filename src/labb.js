@@ -63,17 +63,15 @@ function charCounter(char, sentence){
         return (sentence.match(regExp)|| []).length;
 }
 
-/* --------------------------------- INTE KLAR ----------------------------------------------- */
-
 function getNumbers(array){
     
-    //return array.filter(isNaN)
-    return array.filter(function(item) {
+    let newArray = array.filter(function(item) {
         return (typeof item === "number")
     });
+    return newArray.filter(function (value){
+        return !Number.isNaN(value)
+    })
 }
-
-/* --------------------------------------------------------------------------------------------*/
 
 function sortingNumbers(numbArray, sortOrder){
     if(sortOrder === 1){
