@@ -1,5 +1,3 @@
-
-// modifiera sum() tills testet blir godkänt!
 function sum(firstNumb, secondNumb) {
     return firstNumb+secondNumb
 }
@@ -8,7 +6,6 @@ function myOwnMultiplyFunction(firstNumb, secondNumb) {
     return firstNumb*secondNumb
 }
 
-// denna måste exporteras längst ned i denna fil! annars kan labb.test.js inte importera den.
 function isBelowZero(number) {
     let trueOrFalse
     if (number<0) {
@@ -70,7 +67,7 @@ function getNumbers(array){
     });
     return newArray.filter(function (value){
         return !Number.isNaN(value)
-    })
+    });
 }
 
 function sortingNumbers(numbArray, sortOrder){
@@ -82,6 +79,35 @@ function sortingNumbers(numbArray, sortOrder){
     }
 }
 
+function setPersonName(firstname, lastname){
+    this.firstname = firstName = firstname[0].toUpperCase() + firstname.slice(1)
+    this.lastname = lastName =  lastname[0].toUpperCase() + lastname.slice(1)
+    this.fullname = firstName + " " + lastName
+    this.initials = firstName[0] +"." + lastName[0]
+    
+    return this
+}
+
+function setDoubledPrice(productArray){
+
+    for (let index = 0; index < productArray.length; index++) {
+        productArray[index].price =  productArray[index].price*2
+    }return productArray
+}
+
+function bothIsTrue(valueOne, valueTwo){
+    let booleans = [valueOne, valueTwo]
+    return booleans.every(x => x === true)
+}
+
+function removeTrailingnumbers(number){
+    return parseFloat(number)
+}
+
+function getKeysAndValues(obj){
+    let newObj = {keys: Object.keys(obj), values: Object.values(obj)}
+    return newObj
+}
 
 // https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG how require and modules work in JavaScript
 module.exports.sum = sum
@@ -95,8 +121,8 @@ module.exports.sortByStringLength = sortWordsByStringLength
 module.exports.charCounter = charCounter
 module.exports.numbersOnly = getNumbers
 module.exports.sortNumbers = sortingNumbers
-module.exports.personFactory = undefined
-module.exports.doublePrice = undefined
-module.exports.and = undefined
-module.exports.removeLeadingTrailing = undefined
-module.exports.getKeysAndValues = undefined
+module.exports.personFactory = setPersonName
+module.exports.doublePrice = setDoubledPrice
+module.exports.and = bothIsTrue
+module.exports.removeLeadingTrailing = removeTrailingnumbers
+module.exports.getKeysAndValues = getKeysAndValues
