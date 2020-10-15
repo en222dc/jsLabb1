@@ -107,6 +107,10 @@ function removeTrailingnumbers(number){
 function getKeysAndValues(obj){
     let newObj = {keys: Object.keys(obj), values: Object.values(obj)}
     return newObj
+
+    /* 
+        att bara skriva "return {keys: Object.keys(obj), values: Object.values(obj)}" funkar också, vilket är best practice?
+    */
 }
 
 // https://eloquentjavascript.net/10_modules.html#h_N33QHgUxbG how require and modules work in JavaScript
